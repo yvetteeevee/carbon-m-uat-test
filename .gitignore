@@ -20,6 +20,7 @@ playwright/.cache/
 .env.development.local
 .env.test.local
 .env.production.local
+docs/
 
 # 系統檔案
 .DS_Store
@@ -31,3 +32,4 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 *.log
+

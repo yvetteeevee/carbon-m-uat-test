@@ -6,7 +6,7 @@ import {
   navigateToCreateProjectForm,
 } from "../utils/navigationHelper";
 
-// 定義測試資料，專案名稱加上時間戳確保不重複
+// 測試資料（名稱加上時間戳）
 const newProjectData = {
   name: `測試專案_${new Date().getTime()}`,
   code: `AUTOCode_${new Date().getTime()}`,
@@ -46,7 +46,6 @@ test.describe("專案管理", () => {
       .click();
 
     await page.getByTestId("projectName").fill(newProjectData.name);
-    // await page.getByTestId("projectCode").fill(newProjectData.code);
     await page.getByTestId("country").selectOption(newProjectData.country);
     await page.locator("#goal").fill(newProjectData.target);
     await page.getByTestId("audit-purpose-EXTERNAL").click();
@@ -88,15 +87,3 @@ test.describe("專案管理", () => {
     await expect(page.getByText(newProjectData.name)).toBeVisible();
   });
 });
-
-/*   name: `測試專案_${new Date().getTime()}`,
-  code: `AUTOCode_${new Date().getTime()}`,
-  country: "c69f5df3-6dff-4d78-8c69-6fc8e2fe4083",
-  target: "專案目標",
-  standard: "ISO 14064-1:2018/CNS 14064-1:2021",
-  auditPurpose: "EXTERNAL",
-  offsiteName: "場址外_名稱",
-  offsiteAddress: "場址外_地址",
-  onsiteName: "場址內_名稱",
-  onsiteAddress: "場址內_地址",
-  settingRule: "CONTROL_APPROACH_FIN_CONTROL", */
